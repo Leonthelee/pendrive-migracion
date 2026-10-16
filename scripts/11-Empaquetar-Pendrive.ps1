@@ -16,11 +16,12 @@ Write-Host "==================================================================" 
 Write-Host " DGA - Empaquetado y Copia Segura a Pendrive Fisico (NTFS / exFAT)" -ForegroundColor Cyan
 Write-Host "==================================================================" -ForegroundColor Cyan
 
-# 1. Calculo de peso real materializado (incluyendo HardLinks de ISO)
+# 1. Limpieza de flujos ADS Zone.Identifier (Mark-of-the-Web) y calculo de peso real
 $archivosKit = Get-ChildItem -LiteralPath $raizKit -Recurse -File -Force | Where-Object {
     $_.FullName -notmatch '\\\.git(\\|$)' -and
     $_.FullName -notmatch '\\_backup'
 }
+$archivosKit | Unblock-File -ErrorAction SilentlyContinue
 
 $bytesIso = ($archivosKit | Where-Object { $_.Extension -ieq '.iso' } | Measure-Object -Property Length -Sum).Sum
 if (-not $bytesIso) { $bytesIso = 0 }
