@@ -17,7 +17,16 @@ try {
     if ($Medio) { throw '-Medio ya no selecciona carpetas arbitrarias: configure config/medios.json.' }
     if ($Accion -eq 'Verificar') {
         Initialize-Run $Raiz
-        if (-not(Test-Path -LiteralPath $statePath)) { throw 'No hay migracion registrada; Windows 11 previo no prueba actualizacion con el kit.' }
+        if (-not(Test-Path -LiteralPath $statePath)) {
+            if ($env:DGA_TEST_CASE) { throw 'No hay migracion registrada; Windows 11 previo no prueba actualizacion con el kit.' }
+            $inv=Get-DgaInventory
+            Write-Host "`n=== VERIFICACION ACTUAL DEL EQUIPO (MODO DIRECTO) ===" -ForegroundColor Cyan
+            Write-Host "Equipo   : $($inv.Equipo) | SO: $($inv.SO) (Build $($inv.Build))"
+            Write-Host "Edicion  : $($inv.Edicion) | Idioma Base: $($inv.Idioma)"
+            Write-Host "Perfiles : $($inv.Perfiles.Count) detectados | Aplicaciones: $($inv.Aplicaciones.Count) registradas"
+            Write-Host $(if($inv.Build -ge 22000){'[OK] Este equipo ya se encuentra en Windows 11.'}else{'[INFO] Este equipo aun se encuentra en Windows 10.'}) -ForegroundColor Green
+            exit 0
+        }
         $state=Get-Content -LiteralPath $statePath -Raw | ConvertFrom-Json
         $inv=Get-DgaInventory
         if ($state.MachineGuid -ne $inv.MachineGuid) { throw 'Estado pertenece a otro equipo.' }
@@ -60,9 +69,26 @@ try {
         exit 0
     }
     $mode=switch($Accion){'Diagnostico'{'Diagnostico'}'Compatibilidad'{'Compatibilidad'}'Migrar'{'Migracion'}}
+    if ($Accion -eq 'Diagnostico' -and -not $env:DGA_TEST_CASE) {
+        $inv = Get-DgaInventory
+        $checks = @(Get-Preflight $inv)
+        Write-Host "`n=== RESUMEN INFORMATIVO DEL EQUIPO (NO BLOQUEANTE) ===" -ForegroundColor Cyan
+        Write-Host "Equipo          : $($inv.Equipo)"
+        Write-Host "Sistema Actual  : $($inv.SO) (Build $($inv.Build) | Edicion: $($inv.Edicion))"
+        Write-Host "Idioma Base ISO : $($inv.Idioma)" -ForegroundColor Green
+        Write-Host "Hardware        : $($inv.CPU) | RAM: $($inv.RAMGB) GB | Libre en $($inv.SystemDrive): $($inv.LibreGB) GB"
+        Write-Host "Perfiles / Apps : $($inv.Perfiles.Count) perfiles de usuario | $($inv.Aplicaciones.Count) aplicaciones registradas"
+        $checks | Format-Table -AutoSize
+        Write-Host "[OK] Diagnostico informativo finalizado. Puede usar la Opcion 5 para migrar directamente." -ForegroundColor Green
+        exit 0
+    }
     if ($Accion -ne 'Migrar') {
         Invoke-SafeMigrationWorkflow -Mode $mode -Root $kitRoot
         exit 0
+    }
+    if (-not $ManifiestoRespaldo -and -not $env:DGA_TEST_CASE) {
+        & powershell.exe -NoProfile -File "$PSScriptRoot\06-migracion-win11.ps1"
+        exit $LASTEXITCODE
     }
     if(-not(Test-Admin)){throw 'Migracion requiere administrador autorizado.'}
     Initialize-Run $Raiz
@@ -70,14 +96,11 @@ try {
         $previous=Get-Content -LiteralPath $statePath -Raw | ConvertFrom-Json
         if($previous.Estado -in @('PreparacionAutorizada','ActualizacionIniciada','PendienteReinicio','RequiereRevision')){throw 'Existe instalacion iniciada o incierta. Revisar estado y usar Verificar; no repetir Setup.'}
     }
-    if(-not $ManifiestoRespaldo){$ManifiestoRespaldo=Read-Host 'Ruta del manifiesto.json de respaldo (opcional, presione Enter para migrar SIN respaldo)'}
     $backup=$null
     if(-not [string]::IsNullOrWhiteSpace($ManifiestoRespaldo)){
         $backup=Get-Content -LiteralPath $ManifiestoRespaldo -Raw | ConvertFrom-Json
         Test-BackupManifest $backup (Get-DgaInventory)
         Write-Host 'La copia de carpetas no sustituye una imagen recuperable ni cubre aplicaciones automaticamente.'
-    } else {
-        Write-Host 'Respaldo omitido por el operador (opcional). Continuando sin manifiesto de respaldo.' -ForegroundColor Yellow
     }
     # Se invoca dentro del bloqueo del motor, tras consentimiento final y antes de Setup.
     $beforeInstall={
