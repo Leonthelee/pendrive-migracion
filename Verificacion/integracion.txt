@@ -1,0 +1,17 @@
+OK motor integrado existe
+OK entradas activas respetan politica
+OK adaptador usa motor y verificacion final de respaldo
+OK sin destino local por defecto
+OK preparador antiguo ya no busca ISO automaticamente
+OK sin bypass WSUS ni postinstalacion automatica heredada
+OK destino en disco sistema rechazado
+OK otra particion mismo disco rechazada
+OK identidad de disco desconocida rechazada
+OK otro disco fisico aceptado con consultas simuladas
+OK UNC localhost rechazado
+OK manifest local rechazado antes de hashear archivos
+OK manifest sin origenes rechazado
+OK postverificacion no declara completado con faltantes
+OK todos los scripts activos analizan en PS5
+OK ejemplos PowerShell de los manuales analizan sin ejecutarse
+TOTAL DGA: 16 pruebas correctas; sin ejecutar instaladores ni consultas de hardware reales.

@@ -1,0 +1,33 @@
+{
+  "SchemaVersion": 1,
+  "Media": [
+    {
+      "Language": "es-MX",
+      "Edition": "Professional",
+      "Architecture": "x64",
+      "File": "W11-MX-x64.iso",
+      "Sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "ImageIndex": 6,
+      "ImageVersion": "10.0.26200.1000",
+      "Release": "25H2",
+      "Approved": false,
+      "SourceUrl": "https://www.microsoft.com/software-download/windows11",
+      "ApprovedOn": "2026-10-15",
+      "ApprovedBy": ""
+    },
+    {
+      "Language": "es-ES",
+      "Edition": "Professional",
+      "Architecture": "x64",
+      "File": "W11-ES-x64.iso",
+      "Sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "ImageIndex": 6,
+      "ImageVersion": "10.0.26200.1000",
+      "Release": "25H2",
+      "Approved": false,
+      "SourceUrl": "https://www.microsoft.com/software-download/windows11",
+      "ApprovedOn": "2026-10-15",
+      "ApprovedBy": ""
+    }
+  ]
+}

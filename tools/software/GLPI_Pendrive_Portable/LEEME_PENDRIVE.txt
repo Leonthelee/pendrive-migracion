@@ -1,0 +1,30 @@
+============================================================================
+  MINISTERIO DE OBRAS PUBLICAS - DIRECCION GENERAL DE AGUAS (DGA)
+  GLPI Agent 1.17 Portable para Pendrive
+  Firma: DGA Core Tools -- by Daniel Diaz L. & AI Engine Antigravity
+============================================================================
+
+COMO USAR ESTE PENDRIVE EN CUALQUIER EQUIPO DGA:
+
+1. Conectar el pendrive en el equipo que se desea inventariar.
+2. Abrir la carpeta del pendrive y hacer doble clic en:
+   "INSTALAR_GLPI_PENDRIVE.bat"
+3. Si aparece el control de cuentas de usuario (UAC), hacer clic en "Si".
+4. El instalador ejecutara todo de forma automatica:
+   - Instala silenciosamente el paquete original MSI sin alterar el archivo.
+   - Configura el servidor: https://glpi-dga.mop.gob.cl
+   - Inicia el servicio de Windows "glpi-agent".
+   - Ejecuta en silencioso la peticion a "localhost:62354" para forzar el
+     reporte de inventario inmediato al servidor ministerial.
+5. Listo. Al terminar, el equipo queda registrado y puede retirar el pendrive.
+
+----------------------------------------------------------------------------
+SCRIPTS ADICIONALES:
+- "EJECUTAR_SILENCIOSO_LOCALHOST_62354.bat":
+  Si el agente ya estaba instalado y solo se quiere forzar el inventario
+  en silencioso sin reinstalar nada.
+
+- "VERIFICAR_ESTADO_GLPI.bat":
+  Abre la pagina web interna (http://localhost:62354) para comprobar
+  visualmente que el agente esta activo y enlazado a la DGA.
+============================================================================

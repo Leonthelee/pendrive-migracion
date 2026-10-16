@@ -1,0 +1,15 @@
+# Imágenes ISO oficiales (superan el límite de GitHub y se validan por SHA256 en config/medios.json)
+ISO/*.iso
+*.iso
+
+# Respaldos locales de revisiones previas
+_backup_*/
+
+# Instaladores binarios pesados / corporativos en tools/software
+tools/software/**/*.exe
+tools/software/**/*.msi
+
+# Reportes de inventario de máquinas específicas (contienen hostnames/datos de equipos DGA)
+reportes/*.html
+reportes/*.txt
+!reportes/.gitkeep

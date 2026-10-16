@@ -1,0 +1,193 @@
+OK inventario admisible
+OK idioma divergente SystemLanguage
+OK idioma divergente DismLanguage
+OK idioma divergente OriginalLanguage
+OK control negativo TpmReady
+OK control negativo Tpm20
+OK control negativo SecureBoot
+OK control negativo PowerOnline
+OK control negativo BitLockerKnown
+OK control negativo BitLockerHealthy
+OK bloqueo PendingReboot
+OK bloqueo BypassDetected
+OK bloqueo SMode
+OK bloqueo SetupRunning
+OK recurso insuficiente MemoryGB
+OK recurso insuficiente DiskGB
+OK recurso insuficiente FreeGB
+OK recurso insuficiente CpuCores
+OK recurso insuficiente CpuMHz
+OK error de consulta
+OK campo ausente
+OK arquitectura ARM bloqueada
+OK origen antiguo bloqueado
+OK Windows 11 origen bloqueado
+OK LTSC bloqueado
+OK mapeo exacto
+OK sin fallback MX ES
+OK N no equivale a no N
+OK mapeo duplicado
+OK sin aprobacion
+OK mapa vacio bloquea
+OK falta hash bloquea
+OK fuente no oficial bloquea
+OK fecha futura bloquea
+OK indice string bloquea
+OK aprobacion string no booleano
+OK hash ficticio cero
+OK traversal
+OK inyeccion ruta
+OK aprobacion vencida
+OK 26H1 bloqueada
+OK codigo scan firmado
+OK codigo scan unsigned
+OK scan correcto
+OK scan bloqueado 0x00000000
+OK scan bloqueado 0xC1900208
+OK scan bloqueado 0xC1900204
+OK scan bloqueado 0xC1900200
+OK scan bloqueado 0xC190020E
+OK scan bloqueado 0xC190010E
+OK scan bloqueado 0xDEADBEEF
+OK argumentos scan sin ignorar advertencias
+OK argumentos migracion visibles sin aceptar licencia
+OK hash discordante
+OK hash concordante
+OK metadatos correctos
+X
+OK consentimiento incorrecto bloquea
+Prechequeo completado. Aun faltan medio, revision humana y ScanOnly.
+Reportes: SIMULADO
+OK flujo diagnostico nunca monta ni instala
+Se verificara SHA256, se montara la ISO en solo lectura y se consultara su imagen.
+Equipo: PILOTO | Professional | es-MX | W11-MX.iso
+Confirme revision de CPU admitida, graficos/pantalla, salud de version, bloqueos de Windows Update, licencia, aplicaciones criticas y alimentacion estable. No use ISO para saltarse un safeguard hold.
+ScanOnly no instala Windows, pero escribe temporales/logs y Dynamic Update contacta Microsoft. Lea los terminos oficiales: https://www.microsoft.com/useterms . Confirme autorizacion para aceptar EULA y ejecutar este analisis.
+Reportes: SIMULADO
+OK flujo scan nunca instala
+Se verificara SHA256, se montara la ISO en solo lectura y se consultara su imagen.
+Equipo: PILOTO | Professional | es-MX | W11-MX.iso
+Confirme revision de CPU admitida, graficos/pantalla, salud de version, bloqueos de Windows Update, licencia, aplicaciones criticas y alimentacion estable. No use ISO para saltarse un safeguard hold.
+ScanOnly no instala Windows, pero escribe temporales/logs y Dynamic Update contacta Microsoft. Lea los terminos oficiales: https://www.microsoft.com/useterms . Confirme autorizacion para aceptar EULA y ejecutar este analisis.
+Reportes: SIMULADO
+OK flujo codigo 0x00000000 impide instalar
+Se verificara SHA256, se montara la ISO en solo lectura y se consultara su imagen.
+Equipo: PILOTO | Professional | es-MX | W11-MX.iso
+Confirme revision de CPU admitida, graficos/pantalla, salud de version, bloqueos de Windows Update, licencia, aplicaciones criticas y alimentacion estable. No use ISO para saltarse un safeguard hold.
+ScanOnly no instala Windows, pero escribe temporales/logs y Dynamic Update contacta Microsoft. Lea los terminos oficiales: https://www.microsoft.com/useterms . Confirme autorizacion para aceptar EULA y ejecutar este analisis.
+Reportes: SIMULADO
+OK flujo codigo 0xC1900208 impide instalar
+Se verificara SHA256, se montara la ISO en solo lectura y se consultara su imagen.
+Equipo: PILOTO | Professional | es-MX | W11-MX.iso
+Confirme revision de CPU admitida, graficos/pantalla, salud de version, bloqueos de Windows Update, licencia, aplicaciones criticas y alimentacion estable. No use ISO para saltarse un safeguard hold.
+ScanOnly no instala Windows, pero escribe temporales/logs y Dynamic Update contacta Microsoft. Lea los terminos oficiales: https://www.microsoft.com/useterms . Confirme autorizacion para aceptar EULA y ejecutar este analisis.
+Reportes: SIMULADO
+OK flujo codigo 0xC1900204 impide instalar
+Se verificara SHA256, se montara la ISO en solo lectura y se consultara su imagen.
+Equipo: PILOTO | Professional | es-MX | W11-MX.iso
+Confirme revision de CPU admitida, graficos/pantalla, salud de version, bloqueos de Windows Update, licencia, aplicaciones criticas y alimentacion estable. No use ISO para saltarse un safeguard hold.
+ScanOnly no instala Windows, pero escribe temporales/logs y Dynamic Update contacta Microsoft. Lea los terminos oficiales: https://www.microsoft.com/useterms . Confirme autorizacion para aceptar EULA y ejecutar este analisis.
+Reportes: SIMULADO
+OK flujo codigo 0xC1900200 impide instalar
+Se verificara SHA256, se montara la ISO en solo lectura y se consultara su imagen.
+Equipo: PILOTO | Professional | es-MX | W11-MX.iso
+Confirme revision de CPU admitida, graficos/pantalla, salud de version, bloqueos de Windows Update, licencia, aplicaciones criticas y alimentacion estable. No use ISO para saltarse un safeguard hold.
+ScanOnly no instala Windows, pero escribe temporales/logs y Dynamic Update contacta Microsoft. Lea los terminos oficiales: https://www.microsoft.com/useterms . Confirme autorizacion para aceptar EULA y ejecutar este analisis.
+Reportes: SIMULADO
+OK flujo codigo 0xC190020E impide instalar
+Se verificara SHA256, se montara la ISO en solo lectura y se consultara su imagen.
+Equipo: PILOTO | Professional | es-MX | W11-MX.iso
+Confirme revision de CPU admitida, graficos/pantalla, salud de version, bloqueos de Windows Update, licencia, aplicaciones criticas y alimentacion estable. No use ISO para saltarse un safeguard hold.
+ScanOnly no instala Windows, pero escribe temporales/logs y Dynamic Update contacta Microsoft. Lea los terminos oficiales: https://www.microsoft.com/useterms . Confirme autorizacion para aceptar EULA y ejecutar este analisis.
+Reportes: SIMULADO
+OK flujo codigo 0xDEADBEEF impide instalar
+Se verificara SHA256, se montara la ISO en solo lectura y se consultara su imagen.
+Reportes: SIMULADO
+OK flujo rechazo VALIDAR MEDIO
+Se verificara SHA256, se montara la ISO en solo lectura y se consultara su imagen.
+Equipo: PILOTO | Professional | es-MX | W11-MX.iso
+Confirme revision de CPU admitida, graficos/pantalla, salud de version, bloqueos de Windows Update, licencia, aplicaciones criticas y alimentacion estable. No use ISO para saltarse un safeguard hold.
+Reportes: SIMULADO
+OK flujo rechazo REVISION TECNICA COMPLETA
+Se verificara SHA256, se montara la ISO en solo lectura y se consultara su imagen.
+Equipo: PILOTO | Professional | es-MX | W11-MX.iso
+Confirme revision de CPU admitida, graficos/pantalla, salud de version, bloqueos de Windows Update, licencia, aplicaciones criticas y alimentacion estable. No use ISO para saltarse un safeguard hold.
+ScanOnly no instala Windows, pero escribe temporales/logs y Dynamic Update contacta Microsoft. Lea los terminos oficiales: https://www.microsoft.com/useterms . Confirme autorizacion para aceptar EULA y ejecutar este analisis.
+Reportes: SIMULADO
+OK flujo rechazo ACEPTO EULA Y ANALISIS
+Se verificara SHA256, se montara la ISO en solo lectura y se consultara su imagen.
+Equipo: PILOTO | Professional | es-MX | W11-MX.iso
+Confirme revision de CPU admitida, graficos/pantalla, salud de version, bloqueos de Windows Update, licencia, aplicaciones criticas y alimentacion estable. No use ISO para saltarse un safeguard hold.
+ScanOnly no instala Windows, pero escribe temporales/logs y Dynamic Update contacta Microsoft. Lea los terminos oficiales: https://www.microsoft.com/useterms . Confirme autorizacion para aceptar EULA y ejecutar este analisis.
+Confirme respaldo externo reciente de TODOS los perfiles/datos y aplicaciones recuperables, restauracion de muestra verificada, licencias/instaladores y plan de recuperacion. Un punto de restauracion o sincronizacion no basta.
+Reportes: SIMULADO
+OK flujo rechazo RESPALDO VERIFICADO
+Se verificara SHA256, se montara la ISO en solo lectura y se consultara su imagen.
+Equipo: PILOTO | Professional | es-MX | W11-MX.iso
+Confirme revision de CPU admitida, graficos/pantalla, salud de version, bloqueos de Windows Update, licencia, aplicaciones criticas y alimentacion estable. No use ISO para saltarse un safeguard hold.
+ScanOnly no instala Windows, pero escribe temporales/logs y Dynamic Update contacta Microsoft. Lea los terminos oficiales: https://www.microsoft.com/useterms . Confirme autorizacion para aceptar EULA y ejecutar este analisis.
+Confirme respaldo externo reciente de TODOS los perfiles/datos y aplicaciones recuperables, restauracion de muestra verificada, licencias/instaladores y plan de recuperacion. Un punto de restauracion o sincronizacion no basta.
+Reportes: SIMULADO
+OK flujo rechazo ID del respaldo
+Se verificara SHA256, se montara la ISO en solo lectura y se consultara su imagen.
+Equipo: PILOTO | Professional | es-MX | W11-MX.iso
+Confirme revision de CPU admitida, graficos/pantalla, salud de version, bloqueos de Windows Update, licencia, aplicaciones criticas y alimentacion estable. No use ISO para saltarse un safeguard hold.
+ScanOnly no instala Windows, pero escribe temporales/logs y Dynamic Update contacta Microsoft. Lea los terminos oficiales: https://www.microsoft.com/useterms . Confirme autorizacion para aceptar EULA y ejecutar este analisis.
+Confirme respaldo externo reciente de TODOS los perfiles/datos y aplicaciones recuperables, restauracion de muestra verificada, licencias/instaladores y plan de recuperacion. Un punto de restauracion o sincronizacion no basta.
+Confirme claves de recuperacion accesibles y verificadas para todas las unidades cifradas, guardadas FUERA de este pendrive. No escriba las claves aqui.
+Reportes: SIMULADO
+OK flujo rechazo RECUPERACION VERIFICADA
+Se verificara SHA256, se montara la ISO en solo lectura y se consultara su imagen.
+Equipo: PILOTO | Professional | es-MX | W11-MX.iso
+Confirme revision de CPU admitida, graficos/pantalla, salud de version, bloqueos de Windows Update, licencia, aplicaciones criticas y alimentacion estable. No use ISO para saltarse un safeguard hold.
+ScanOnly no instala Windows, pero escribe temporales/logs y Dynamic Update contacta Microsoft. Lea los terminos oficiales: https://www.microsoft.com/useterms . Confirme autorizacion para aceptar EULA y ejecutar este analisis.
+Confirme respaldo externo reciente de TODOS los perfiles/datos y aplicaciones recuperables, restauracion de muestra verificada, licencias/instaladores y plan de recuperacion. Un punto de restauracion o sincronizacion no basta.
+Confirme claves de recuperacion accesibles y verificadas para todas las unidades cifradas, guardadas FUERA de este pendrive. No escriba las claves aqui.
+Se iniciara Setup /auto upgrade. Puede empezar a modificar Windows tras aceptar la licencia. Guarde trabajos y cierre aplicaciones. /noreboot detiene solo el PRIMER reinicio; reinicios posteriores son automaticos. No desconecte el medio. No se garantiza recuperacion sin respaldo.
+Reportes: SIMULADO
+OK flujo rechazo MIGRAR PILOTO
+Reportes: SIMULADO
+OK flujo inventario bloqueado
+ADVERTENCIA: No se pudo guardar reporte final. No continuar.
+Reportes: SIMULADO
+OK flujo reporte no escribible bloquea
+Se verificara SHA256, se montara la ISO en solo lectura y se consultara su imagen.
+Equipo: PILOTO | Professional | es-MX | W11-MX.iso
+Confirme revision de CPU admitida, graficos/pantalla, salud de version, bloqueos de Windows Update, licencia, aplicaciones criticas y alimentacion estable. No use ISO para saltarse un safeguard hold.
+ScanOnly no instala Windows, pero escribe temporales/logs y Dynamic Update contacta Microsoft. Lea los terminos oficiales: https://www.microsoft.com/useterms . Confirme autorizacion para aceptar EULA y ejecutar este analisis.
+Confirme respaldo externo reciente de TODOS los perfiles/datos y aplicaciones recuperables, restauracion de muestra verificada, licencias/instaladores y plan de recuperacion. Un punto de restauracion o sincronizacion no basta.
+Confirme claves de recuperacion accesibles y verificadas para todas las unidades cifradas, guardadas FUERA de este pendrive. No escriba las claves aqui.
+Se iniciara Setup /auto upgrade. Puede empezar a modificar Windows tras aceptar la licencia. Guarde trabajos y cierre aplicaciones. /noreboot detiene solo el PRIMER reinicio; reinicios posteriores son automaticos. No desconecte el medio. No se garantiza recuperacion sin respaldo.
+Reportes: SIMULADO
+OK flujo estado cambia tras scan bloquea
+Se verificara SHA256, se montara la ISO en solo lectura y se consultara su imagen.
+Equipo: PILOTO | Professional | es-MX | W11-MX.iso
+Confirme revision de CPU admitida, graficos/pantalla, salud de version, bloqueos de Windows Update, licencia, aplicaciones criticas y alimentacion estable. No use ISO para saltarse un safeguard hold.
+ScanOnly no instala Windows, pero escribe temporales/logs y Dynamic Update contacta Microsoft. Lea los terminos oficiales: https://www.microsoft.com/useterms . Confirme autorizacion para aceptar EULA y ejecutar este analisis.
+Confirme respaldo externo reciente de TODOS los perfiles/datos y aplicaciones recuperables, restauracion de muestra verificada, licencias/instaladores y plan de recuperacion. Un punto de restauracion o sincronizacion no basta.
+Confirme claves de recuperacion accesibles y verificadas para todas las unidades cifradas, guardadas FUERA de este pendrive. No escriba las claves aqui.
+Se iniciara Setup /auto upgrade. Puede empezar a modificar Windows tras aceptar la licencia. Guarde trabajos y cierre aplicaciones. /noreboot detiene solo el PRIMER reinicio; reinicios posteriores son automaticos. No desconecte el medio. No se garantiza recuperacion sin respaldo.
+Setup devolvio 0x00000000. No equivale a migracion terminada. Revise interfaz/logs, reinicie manualmente cuando proceda y ejecute checklist posterior.
+ISO queda montada para Setup. No retire el pendrive durante la actualizacion.
+Reportes: SIMULADO
+OK flujo autorizado repite scan y solo entonces instala
+Se verificara SHA256, se montara la ISO en solo lectura y se consultara su imagen.
+Equipo: PILOTO | Professional | es-MX | W11-MX.iso
+Confirme revision de CPU admitida, graficos/pantalla, salud de version, bloqueos de Windows Update, licencia, aplicaciones criticas y alimentacion estable. No use ISO para saltarse un safeguard hold.
+ScanOnly no instala Windows, pero escribe temporales/logs y Dynamic Update contacta Microsoft. Lea los terminos oficiales: https://www.microsoft.com/useterms . Confirme autorizacion para aceptar EULA y ejecutar este analisis.
+Confirme respaldo externo reciente de TODOS los perfiles/datos y aplicaciones recuperables, restauracion de muestra verificada, licencias/instaladores y plan de recuperacion. Un punto de restauracion o sincronizacion no basta.
+Confirme claves de recuperacion accesibles y verificadas para todas las unidades cifradas, guardadas FUERA de este pendrive. No escriba las claves aqui.
+Se iniciara Setup /auto upgrade. Puede empezar a modificar Windows tras aceptar la licencia. Guarde trabajos y cierre aplicaciones. /noreboot detiene solo el PRIMER reinicio; reinicios posteriores son automaticos. No desconecte el medio. No se garantiza recuperacion sin respaldo.
+ISO queda montada para Setup. No retire el pendrive durante la actualizacion.
+Reportes: SIMULADO
+OK flujo Setup devuelve error sin declarar exito
+Se verificara SHA256, se montara la ISO en solo lectura y se consultara su imagen.
+Equipo: PILOTO | Professional | es-MX | W11-MX.iso
+Confirme revision de CPU admitida, graficos/pantalla, salud de version, bloqueos de Windows Update, licencia, aplicaciones criticas y alimentacion estable. No use ISO para saltarse un safeguard hold.
+ScanOnly no instala Windows, pero escribe temporales/logs y Dynamic Update contacta Microsoft. Lea los terminos oficiales: https://www.microsoft.com/useterms . Confirme autorizacion para aceptar EULA y ejecutar este analisis.
+Confirme respaldo externo reciente de TODOS los perfiles/datos y aplicaciones recuperables, restauracion de muestra verificada, licencias/instaladores y plan de recuperacion. Un punto de restauracion o sincronizacion no basta.
+Confirme claves de recuperacion accesibles y verificadas para todas las unidades cifradas, guardadas FUERA de este pendrive. No escriba las claves aqui.
+Se iniciara Setup /auto upgrade. Puede empezar a modificar Windows tras aceptar la licencia. Guarde trabajos y cierre aplicaciones. /noreboot detiene solo el PRIMER reinicio; reinicios posteriores son automaticos. No desconecte el medio. No se garantiza recuperacion sin respaldo.
+Reportes: SIMULADO
+OK respaldo invalidado antes de instalar bloquea Setup
+TOTAL: 78 pruebas correctas. Setup, montaje, CIM, BitLocker y reportes de flujo fueron simulados.

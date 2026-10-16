@@ -1,0 +1,14 @@
+{
+  "version": "3.0-piloto",
+  "paquetes": [
+    {"id":"DameWare","base":true,"patron":"AGENTEDamewareRemote*.exe","programa":"*Dameware Remote Everywhere Agent*","servicio":"^BASupSrvc$","argumentos":"/S","tipo":"exe"},
+    {"id":"GLPI","base":true,"patron":"GLPI-Agent*.msi","programa":"GLPI Agent*","servicio":"^glpi-agent$","argumentos":"/qn /norestart SERVER=\"https://glpi-dga.mop.gob.cl\" ADD_FIREWALL_EXCEPTION=1 RUNNOW=1 EXECMODE=1 HTTPD_TRUST=\"127.0.0.1/32,::1/128\" HTTPD_PORT=62354","tipo":"msi"},
+    {"id":"Aranda","base":true,"patron":"AGENTE ARANDA.msi","programa":"*Aranda*","servicio":"","argumentos":"/qn /norestart","tipo":"msi","sha256":"F6EFE05E37341863C0AC1B11478D3A010B1ADEFC4CAD78403AEFF4A1E1834B87"},
+    {"id":"Sophos","base":true,"patron":"SophosSetup.exe","programa":"Sophos Endpoint*","servicio":"^Sophos Endpoint Defense Service$","argumentos":"--quiet","tipo":"exe"},
+    {"id":"VPN","base":true,"patron":"anyconnect-win*.msi","programa":"Cisco AnyConnect Secure Mobility Client*","servicio":"^vpnagent$","argumentos":"/qn /norestart","tipo":"msi"},
+    {"id":"Java","base":false,"patron":"jre-8u*.exe","programa":"Java 8*","servicio":"","argumentos":"/s","tipo":"exe"},
+    {"id":"QGIS","base":false,"patron":"QGIS*.msi","programa":"QGIS*","servicio":"","argumentos":"/qn /norestart","tipo":"msi"},
+    {"id":"HEC-RAS","base":false,"patron":"HEC-RAS*.exe","programa":"HEC-RAS*","servicio":"","argumentos":"","tipo":"manual"},
+    {"id":"RSAT","base":false,"patron":"Instalar-RSAT.bat","programa":"","servicio":"","argumentos":"","tipo":"manual"}
+  ]
+}

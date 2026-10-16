@@ -1,0 +1,19 @@
+La copia de carpetas no sustituye una imagen recuperable ni cubre aplicaciones automaticamente.
+Verificacion manual posterior: C:\Users\DGA-MO~1\AppData\Local\Temp\DGA-Pruebas-3e21f6cbab1349339c0c13f0388bcd7b\verificacion\227a45c4e1384d17ac6d58a571d5a0c8\VERIFICAR.cmd
+OK adaptador: doble validacion de respaldo, estado persistente y verificador local
+DETENIDO: Existe instalacion iniciada o incierta. Revisar estado y usar Verificar; no repetir Setup.
+OK adaptador: instalacion pendiente bloquea reejecucion
+Windows11Verificado-PendientePruebasFuncionales
+Todavia hay que probar aplicaciones, archivos, activacion, VPN e impresoras con el usuario. No es aceptacion automatica.
+OK adaptador: postverificacion Normal
+IncidenciasPostMigracion
+Todavia hay que probar aplicaciones, archivos, activacion, VPN e impresoras con el usuario. No es aceptacion automatica.
+OK adaptador: postverificacion AppPerdida
+IncidenciasPostMigracion
+Todavia hay que probar aplicaciones, archivos, activacion, VPN e impresoras con el usuario. No es aceptacion automatica.
+OK adaptador: postverificacion CifradoDesconocido
+IncidenciasPostMigracion
+Todavia hay que probar aplicaciones, archivos, activacion, VPN e impresoras con el usuario. No es aceptacion automatica.
+OK adaptador: postverificacion CifradoPerdido
+TOTAL ADAPTADOR: 6 escenarios correctos. Hardware, respaldo y motor Setup simulados.
+Fixtures conservados: C:\Users\DGA-MO~1\AppData\Local\Temp\DGA-Pruebas-3e21f6cbab1349339c0c13f0388bcd7b

@@ -1,0 +1,5 @@
+Copie aqui solamente ISO oficiales verificadas. No se distribuyen ISO.
+Use nombres simples como W11-MX-x64.iso y W11-ES-x64.iso.
+El nombre NO determina el idioma: se inspecciona el indice WIM/ESD.
+No renombre un medio es-ES para hacerlo pasar por es-MX.
+Consulte README.md antes de completar Config/medios.json.
