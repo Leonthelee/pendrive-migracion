@@ -1,10 +1,10 @@
-﻿$ErrorActionPreference='Stop'
+$ErrorActionPreference='Stop'
 while($true){
     Write-Host "`n=== DGA - MIGRACION v4 / PILOTO ===" -ForegroundColor Cyan
     Write-Host "Equipo: $env:COMPUTERNAME | Trabajo local: $env:ProgramData\DGA\Migracion"
     Write-Host '1) DIAGNOSTICO del equipo (primera prueba, no instala)'
     Write-Host '2) SIMULAR software y comprobar rutas (no instala)'
-    Write-Host '3) RESPALDAR carpetas seleccionadas (destino externo obligatorio)'
+    Write-Host '3) RESPALDAR carpetas seleccionadas (opcional)'
     Write-Host '4) ANALIZAR compatibilidad con Windows Setup (no migra)'
     Write-Host '5) MIGRAR Windows 10 a Windows 11'
     Write-Host '6) VERIFICAR Windows despues del reinicio'

@@ -1,4 +1,4 @@
-﻿[CmdletBinding()]
+[CmdletBinding()]
 param(
     [string]$DestinoRespaldo,
     [string[]]$Origenes,
@@ -15,10 +15,15 @@ try {
         Write-Host 'Perfiles detectados (no seleccione el perfil completo mientras este en uso):' -ForegroundColor Cyan
         $inv.Perfiles | Format-Table LocalPath,Loaded
         Write-Host 'Indique carpetas reales: Documentos, Escritorio, proyectos y datos de aplicaciones necesarios.'
-        Write-Host 'Separe rutas con punto y coma. Cierre las aplicaciones. No se siguen enlaces/junctions.'
-        $Origenes=@((Read-Host 'Carpetas a respaldar').Split(';') | ForEach-Object {$_.Trim().Trim('"')} | Where-Object {$_})
+        Write-Host 'Separe rutas con punto y coma (o presione Enter en blanco para OMITIR el respaldo).'
+        $entradaCarpetas = Read-Host 'Carpetas a respaldar (opcional, Enter para omitir)'
+        $Origenes=@($entradaCarpetas.Split(';') | ForEach-Object {$_.Trim().Trim('"')} | Where-Object {$_})
     }
-    if(-not $Origenes.Count){throw 'Debe seleccionar al menos una carpeta.'}
+    if(-not $Origenes.Count){
+        Write-JsonAtomic (Join-Path $Raiz 'estado\ultimo-respaldo.json') @{Manifiesto='';Estado='Omitido';Equipo=$inv.Equipo;FechaUtc=[datetime]::UtcNow.ToString('o')}
+        Write-Host 'RESPALDO OMITIDO: El respaldo es opcional. Puede continuar directamente con la migracion.' -ForegroundColor Green
+        exit 0
+    }
     $Origenes=@($Origenes | ForEach-Object {(Resolve-Path -LiteralPath $_).ProviderPath.TrimEnd('\')} | Select-Object -Unique)
     if (-not $DestinoRespaldo) { $DestinoRespaldo=Read-Host 'Carpeta de respaldo en OTRO disco fisico o recurso UNC externo (nunca este pendrive)' }
     Assert-ExternalBackupDestination $DestinoRespaldo

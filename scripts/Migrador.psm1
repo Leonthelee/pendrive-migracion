@@ -1,4 +1,4 @@
-﻿#requires -Version 5.1
+#requires -Version 5.1
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
@@ -335,7 +335,8 @@ function Invoke-MigrationWorkflow {
         if ($Mode -eq 'Compatibilidad') { return }
         Add-Consent $report ('Confirme respaldo externo reciente de TODOS los perfiles/datos y aplicaciones recuperables, ' +
             'restauracion de muestra verificada, licencias/instaladores y plan de recuperacion. Un punto de restauracion o sincronizacion no basta.') "RESPALDO VERIFICADO $($inventory.Computer)"
-        $ticket=Read-Host 'ID del respaldo/ticket (6-80 caracteres A-Z a-z 0-9 punto guion o guion bajo; nunca claves ni rutas sensibles)'
+        $ticket=Read-Host 'ID del respaldo/ticket (opcional: presione Enter para SIN-RESPALDO, o 6-80 caracteres)'
+        if ([string]::IsNullOrWhiteSpace($ticket)) { $ticket='SIN-RESPALDO' }
         if ($ticket -notmatch '^[a-zA-Z0-9][a-zA-Z0-9._-]{5,79}$') { throw 'Referencia de respaldo invalida.' }
         $report.Data['BackupReference']=$ticket
         Save-Report $report

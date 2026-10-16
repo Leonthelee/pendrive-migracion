@@ -1,4 +1,4 @@
-﻿#requires -Version 5.1
+#requires -Version 5.1
 [CmdletBinding()]
 param(
     [ValidateSet('Diagnostico','Compatibilidad','Migrar','Verificar')][string]$Accion='Diagnostico',
@@ -70,15 +70,20 @@ try {
         $previous=Get-Content -LiteralPath $statePath -Raw | ConvertFrom-Json
         if($previous.Estado -in @('PreparacionAutorizada','ActualizacionIniciada','PendienteReinicio','RequiereRevision')){throw 'Existe instalacion iniciada o incierta. Revisar estado y usar Verificar; no repetir Setup.'}
     }
-    if(-not $ManifiestoRespaldo){$ManifiestoRespaldo=Read-Host 'Ruta del manifiesto.json del respaldo externo verificado (opcion 3)'}
-    $backup=Get-Content -LiteralPath $ManifiestoRespaldo -Raw | ConvertFrom-Json
-    Test-BackupManifest $backup (Get-DgaInventory)
-    Write-Host 'La copia de carpetas no sustituye una imagen recuperable ni cubre aplicaciones automaticamente.'
+    if(-not $ManifiestoRespaldo){$ManifiestoRespaldo=Read-Host 'Ruta del manifiesto.json de respaldo (opcional, presione Enter para migrar SIN respaldo)'}
+    $backup=$null
+    if(-not [string]::IsNullOrWhiteSpace($ManifiestoRespaldo)){
+        $backup=Get-Content -LiteralPath $ManifiestoRespaldo -Raw | ConvertFrom-Json
+        Test-BackupManifest $backup (Get-DgaInventory)
+        Write-Host 'La copia de carpetas no sustituye una imagen recuperable ni cubre aplicaciones automaticamente.'
+    } else {
+        Write-Host 'Respaldo omitido por el operador (opcional). Continuando sin manifiesto de respaldo.' -ForegroundColor Yellow
+    }
     # Se invoca dentro del bloqueo del motor, tras consentimiento final y antes de Setup.
     $beforeInstall={
         param($media,$report,$fresh)
         $baseline=Get-DgaInventory
-        Test-BackupManifest $backup $baseline
+        if($null -ne $backup){ Test-BackupManifest $backup $baseline }
         $inventoryPath=Join-Path $Raiz "inventario\$runId.json"
         Write-JsonAtomic $inventoryPath $baseline
         $verifyDir=Join-Path $Raiz "verificacion\$runId"
@@ -91,7 +96,7 @@ try {
         Write-JsonAtomic $statePath ([ordered]@{VersionKit='4.0';RunId=$runId;MachineGuid=$baseline.MachineGuid;
             Estado='PreparacionAutorizada';FechaUtc=[datetime]::UtcNow.ToString('o');BuildOrigen=$baseline.Build;
             VersionDestino=$media.ImageVersion;EdicionDestino=$media.Edition;IdiomaDestino=$media.Language;
-            VolumenesAntes=$fresh.Volumes;Inventario=$inventoryPath;Respaldo=$ManifiestoRespaldo;
+            VolumenesAntes=$fresh.Volumes;Inventario=$inventoryPath;Respaldo=$(if($ManifiestoRespaldo){$ManifiestoRespaldo}else{'Omitido'});
             ReporteMotor=(Join-Path $report.Directory 'resultado.json');Verificador=(Join-Path $verifyDir 'VERIFICAR.cmd')})
         $script:prepared=$true
     }
